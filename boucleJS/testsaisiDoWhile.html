@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background: #030B60; text-align: center; color:white">
+    <font color="green">
+        <h1 align="center">
+            <u>Affichage de l'entrée utilisateur</u>
+        </h1>
+    </font>
+   <script>
+        do{
+        var i =prompt("donner un nombre");
+        alert("vous avez choisi: "+i+" valeurs comme condition");
+    }while (i<=0)
+
+    var tab=[];
+    for(var z =0; z<=i; z++){ 
+        tab.push(prompt("donnerr des valeurs jusqu'à " + i));
+        document.write("<br>"+ tab[z]+" <br>");
+    } 
+
+   </script>
+</body>
+</html>

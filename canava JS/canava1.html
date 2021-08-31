@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactions avec la souris</title>
+    <style>
+      canvas {
+        background-color: lightblue;
+        border: 5px solid black;
+        margin-left: 350px;
+        position: relative;
+      }
+
+      table {
+        border-collapse: collapse;
+        position: absolute;
+      }
+
+      h4 {
+        margin-top: 120px;
+      }
+
+      th {
+        background-color: lightgray;
+        font-family: Arial;
+        font-size: 12pt;
+      }
+
+      th, tr, td {
+        border: 1px solid black;
+      }
+
+      th, td {
+        padding: 5px;
+      }
+
+      button {
+        border-radius: 8px;
+        color: white;
+        margin: 5px;
+        padding: 8px;
+        width: 120px;
+      }
+
+      #drawRect {
+        background-color: #387F26;
+      }
+
+      #clearPos {
+        position: relative;
+      }
+
+      .clearClicks {
+        background-color: #B42F2B;
+      }
+
+      .clearMoves {
+        background-color: #3231A9;
+      }
+
+    </style>
+  </head>
+  <body style="text-align: center;">
+    <h1>HTML5 Canvas</h1>
+    <h2> Interactions souris </h2>
+    <h3> Événements souris </h3>
+    <canvas id="myCanvas" width="200" height="200">
+        Désolé, votre navigateur ne prend pas en charge l'élément Canvas. Vous ratez quelque chose.
+    </canvas>
+    <table>
+      <tr>
+        <th> Effacer en déplaçant </th>
+        <th> Effacer en cliquant </th>
+      </tr>
+      <tr>
+        <td><button id="clearMouseOver" class="clearMoves" title="Move over button to clear rectangle.">Mouse Over</button></td>
+        <td><button id="clearClick" class="clearClicks" title="Click me once to clear rectangle.">Click</button></td>
+      </tr>
+
+      <tr>
+        <td><button id="clearMouseEnter" class="clearMoves" title="Move over button to clear rectangle.">Mouse Enter</button></td>
+        <td><button id="clearDblClick" class="clearClicks" title="Click me twice to clear rectangle.">Double Click</button></td>
+      </tr>
+      <tr>
+        <td><button id="clearMouseOut" class="clearMoves" title="Move away from button to clear rectangle.">Mouse Out</button></td>
+        <td><button id="clearMouseDown" class="clearClicks" title="Click button to clear rectangle.">Mouse Down</button></td>
+      </tr>
+      <tr>
+        <td><button id="clearMouseLeave" class="clearMoves" title="Move away from button to clear rectangle.">Mouse Leave</button></td>
+        <td><button id="clearMouseUp" class="clearClicks" title="Release button to clear rectangle.">Mouse Up</button></td>
+      </tr>
+      <tr>
+        <td><button id="clearMouseMove" class="clearMoves" title="Move anywhere over button to clear rectangle.">Mouse Move</button></td>
+        <td><button id="clearContextMenu" class="clearClicks" title="Click alternate mouse button.">Context Menu</button></td>
+      </tr>
+    </table>
+   
+
+    <script>
+      var canvas = document.querySelector("#myCanvas");   // Get access to HTML canvas element
+      var context = canvas.getContext("2d");              // Connect canvas to a context object
+      var canvasWidth = canvas.width;                     // Store canvas width in variable
+      var canvasHeight = canvas.height;                   // Store canvas height in variable
+
+      // Function to draw the rectangle
+      function drawRect() {
+        context.beginPath();
+        context.fillStyle = "red";
+        context.fillRect(50, 50, 100, 100);
+        context.fill();
+      }
+
+      // Function clears the canvas
+      // After 2 seconds, the rectangle is drawn again
+      function clearCanvas() {
+        context.clearRect(0, 0, canvasWidth, canvasHeight);
+        setTimeout(drawRect, 2000);
+      }
+
+      // Initial drawing of rectangle
+      drawRect();
+
+      // Event listeners for mouse events
+      // Clicks
+      document.querySelector("#clearClick").addEventListener("click", clearCanvas, false);
+      document.querySelector("#clearDblClick").addEventListener("dblclick", clearCanvas, false);
+      document.querySelector("#clearMouseDown").addEventListener("mousedown", clearCanvas, false);
+      document.querySelector("#clearMouseUp").addEventListener("mouseup", clearCanvas, false);
+      document.querySelector("#clearContextMenu").addEventListener("contextmenu", clearCanvas, false);
+      // Movement
+      document.querySelector("#clearMouseOver").addEventListener("mouseover", clearCanvas, false);
+      document.querySelector("#clearMouseOut").addEventListener("mouseout", clearCanvas, false);
+      document.querySelector("#clearMouseEnter").addEventListener("mouseenter", clearCanvas, false);
+      document.querySelector("#clearMouseLeave").addEventListener("mouseleave", clearCanvas, false);
+      document.querySelector("#clearMouseMove").addEventListener("mousemove", clearCanvas, false);
+
+    </script>
+  </body>
+</html>

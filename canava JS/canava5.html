@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+
+<title>source javascript</title>
+
+
+<script type="text/javascript">
+
+
+function lien_a(evt){
+
+
+evt.stopPropagation();
+
+alert(evt.currentTarget.id);
+
+}
+
+
+function lien_b(evt){
+
+
+alert(evt.currentTarget.id);
+
+}
+
+
+function lien2(evt){
+
+
+alert(evt.currentTarget.id);
+
+}
+
+
+function lien3(evt){
+
+
+alert(evt.currentTarget.id);
+
+}
+
+
+function ev(evt){ // affiche quelle bouton ade souris a été pressé et le type d'evenement
+
+
+document.getElementById('cc').value=evt.button;
+
+document.getElementById('dd').value=evt.type;
+
+
+}
+
+
+document.onmousemove=function(evt){ //affiche la position de la souris en X et Y par rapport au navigateur
+
+document.getElementById('ee').value=evt.clientX;
+
+document.getElementById('ff').value=evt.clientY;
+
+}
+
+
+document.onkeypress=function(evt){ //affiche le code clavier de la touche pressé
+
+document.getElementById('gg').value=evt.charCode;
+
+document.getElementById('hh').value=String.fromCharCode(evt.charCode);
+
+}
+
+
+document.onmousedown=function(evt){evt.preventDefault();} //évite la selection du texte dans le document
+
+
+document.onclick=function(evt){evt.preventDefault()} //evite l'affichage du menu de souris clic droit
+
+</script>
+
+</head>
+
+<body>
+
+
+<div  onmousedown='lien3(event)'id='div_gris' style='display:inline-block;height:300px;width:300px;background-color:gray'>
+
+<div  onmousedown='lien2(event)' id='div_bleu' style='margin:auto;margin-top:30px;height:200px;width:200px;background-color:blue'>
+
+
+<div  onmousedown='lien_a(event)'id='div_rouge' style='margin:auto;height:80px;width:80px;background-color:red'>texte  texte  texte texte </div>
+
+<br>
+
+<div  onmousedown='lien_b(event)'id='div_vert' style='margin:auto;margin-top:5px;height:80px;width:80px;background-color:green'></div>
+
+
+</div>
+
+</div>
+
+<div  onclick='ev(event)' onmouseover='ev(event)' ondblclick='ev(event)' onmouseout='ev(event)' onmousedown='ev(event)'style='display:inline-block;height:150px;width:150px;background-color:cyan'>
+
+bouton de souris
+
+<br>
+
+<input type='texte' id='cc'></input>
+
+evenement
+
+<br>
+
+<input type='texte' id='dd'></input>
+
+</div>
+
+<br>
+
+<br>
+
+<input type='texte' id='ee'></input>
+
+<input type='texte' id='ff'></input>
+
+<br>
+
+evenement de touche
+
+<br>
+
+<input type='texte' id='gg'></input>correspond a
+
+<input type='texte' id='hh'></input>
+
+</body>
+
+</html>

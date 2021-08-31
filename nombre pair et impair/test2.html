@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+   <head>
+      <title>exo</title>
+      <script>
+         var monInput=prompt("saisissez votre nom");
+         function recuper(monInput){
+            return monInput;
+         }
+         var z="Merci! Bonjour "+ recuper(monInput)+" ça roule ?";
+
+      </script>
+   </head>
+   <body>
+      <p>Cliquer le bouton pour voir la boite de confirmation</p>
+      <button onclick="document.getElementById('nbr').innerHTML=z;">envoyer</button><br>
+      <p> <span id = "nbr"></span></p>
+   </body>
+</html>

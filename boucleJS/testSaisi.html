@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body style="background: #030B60; text-align: center; color:white">
+    <font color="green">
+        <h1 align="center">
+            <u>Affichage de l'entrée utilisateur</u>
+        </h1>
+    </font>
+    <script>
+            var tableauEntreeUtilisateur=[];
+
+            for(let i=0;i<=9;i++)
+            {
+                tableauEntreeUtilisateur.push(prompt("entrer le nombre "+(i+1)+" du trableau"));
+            }
+                document.write("L'entrée de l'utilisateur et Les valeurs du tableau sont :")
+
+            for(let i=0;i<=9;i++)
+            {
+                document.write("<br>"+tableauEntreeUtilisateur[i]+"<br>");
+            }
+    </script>
+</body>
+</html>

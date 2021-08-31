@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <script language="javascript">
+         function f(arg){
+            switch(arg){
+               case 0: alert("Page chargée."); break;
+               case 1: alert("Vous avez cliqué sur le bouton 1."); break;
+               case 2: alert("Vous avez survolé le bouton 2."); break;
+               case 3: alert("Vous avez cliqué 2 fois sur le bouton 3.");
+            }
+         }
+      </script>
+   </head>
+   <body onLoad="f(0)">
+      <input type="button" value="Bouton 1" onClick="f(1)" /><br />
+      <input type="button" value="Bouton 2" onMouseOver="f(2)" /><br />
+      <input type="button" value="Bouton 3" onDblClick="f(3)" /><br />
+   </body>
+</html>

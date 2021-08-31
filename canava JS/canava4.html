@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Changer la couleur d'arrière-plan avec JavaScript</title>
+<script>
+  var a = 100;
+    var b = 10;
+    function changeBodyBg(color){
+        
+        document.getElementById("carre").style.background = color;
+    }
+    
+    function changeBodyTaille(color){
+        if (a<300) {
+            a+=20;
+            var t1 = document.getElementById('carre');
+            t1.style.height = a+"px";
+          }
+          else {
+            var t1 = document.getElementById('carre');
+            t1.style.height = "100px";
+          }
+        
+    }
+   
+    function changeHeadingBg(color){
+        document.getElementById("heading").style.background = color;
+    }
+
+    function cacher(){
+        document.getElementById("carre").hidden = true;
+    }
+
+    function apparaitre() {
+        document.getElementById("carre").hidden = false;
+        
+    }
+    
+</script>
+<style media="screen">
+    #carre {
+          width:100px;
+          height:100px;
+          background:rgb(43, 7, 143);
+          margin:30px auto;
+          }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 id="heading">TITRE</h1>
+        <hr>
+        <div id="carre">
+        </div>
+        <div>
+            <h1>Ecoute des événements:</h1><br>
+            <button type="button" id="taille" onclick="changeBodyTaille();">HAUTEUR</button>
+            <button type="button" onclick="changeBodyBg('yellow');">JAUNE</button>
+            <button type="button" onclick="changeBodyBg('rgb(43, 7, 143)');">INITIALE</button>
+            <button id="cacher"onclick="cacher();">cacher</button>
+            <button id="apparaitre" onclick="apparaitre();">apparaitre</button>
+        </div>
+    </center>
+    <br><!-- 
+    <div>
+        <label>Change Heading Background To:</label>
+        <button type="button" onclick="changeHeadingBg('red');">Red</button>
+        <button type="button" onclick="changeHeadingBg('green');">Green</button>
+        <button type="button" onclick="changeHeadingBg('blue');">Blue</button>
+    </div> -->
+</body>
+</html>

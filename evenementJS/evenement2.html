@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <script language="javascript">
+         function f(){
+            alert("Vous avez cliqué sur le bouton 1.");
+         }
+         function g(){
+            alert("Vous avez survolé le bouton 2.");
+         }
+         function h(){
+            alert("Vous avez cliqué 2 fois sur le bouton 3.");
+         }
+      </script>
+   </head>
+   <body onLoad="alert('Page chargée.')">
+      <input type="button" value="Bouton 1" onClick="f()" /><br />
+      <input type="button" value="Bouton 2" onMouseOver="g()" /><br />
+      <input type="button" value="Bouton 3" onDblClick="h()" /><br />
+   </body>
+</html>
